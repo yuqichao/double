@@ -1,0 +1,29 @@
+extends temp/template
+block content
+  .p3
+    .l
+      .c
+      .c1
+      img(src="./img/logo.svg")
+      .t1
+        .t11
+        .t12
+      .t2
+
+    .m
+      .m_1
+      .m_2
+      .m_3
+      .m_4
+    .e
+      .e_1
+      .e_2
+      .e_3
+
+append js
+  script.
+    $(function(){
+      setTimeout(function(){
+        $('.p2').addClass('on');
+      }, 1000)
+    })

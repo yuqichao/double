@@ -1,0 +1,41 @@
+extends temp/template
+block content
+  .p6
+    .l
+      .sl
+      .sr
+      .carousel
+        ul.banner
+          each item, index in new Array(9)
+            li(class=(index === 0 ? 'on' : '')): .item
+              img(src="./img/c/6-" + (index + 1) + ".png")
+      .t3
+        .t11
+        .t12
+      .t4
+        .t21
+        .t22
+    .m
+      .m_1
+      .m_2
+      .m_3
+      .m_4
+    .e
+      .e_1
+      .e_2
+      .e_3
+      .e_4
+
+append js
+  script(src="./js/jquery.slide.js")
+  script.
+    $(function(){
+      setTimeout(function(){
+        $('.p4').addClass('on');
+      }, 1000)
+
+      $('.box a').on('click', function(){
+        $('.ctn .a').hide().eq($(this).index()).show();
+      })
+      $('.carousel').slide();
+    })

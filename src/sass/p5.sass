@@ -1,0 +1,202 @@
+$p5-width: 763
+$p5-height: 247
+
+@import "p5.sprite.sass"
+
+@mixin p5($sprite)
+  @include sprite($sprite)
+  background-size: res($p5-width) res($p5-height)
+
+.p5, .p6, .p7
+  position: relative
+  width: 100%
+  height: 100%
+  background: url(../img/p2.jpg) no-repeat center center
+  background-size: cover
+  overflow: hidden
+
+  .e, .m
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 1
+
+  .e
+    .e_1
+      position: absolute
+      left: res(20)
+      top: res(20)
+      @include p2($l-2)
+
+    .e_2
+      position: absolute
+      right: res(20)
+      bottom: res(20)
+      @include p2($l-1)
+
+    .e_3
+      position: absolute
+      right: res(20)
+      top: res(20)
+      @include p3($t3-3)
+
+    .e_4
+      position: absolute
+      left: res(20)
+      bottom: res(20)
+      @include p5($e5_4)
+
+  .m
+    div
+      position: absolute
+      @include p2($l-3)
+
+      &.m_1
+        top: res(626)
+        left: res(224)
+
+      &.m_2
+        top: res(228)
+        left: res(464)
+
+      &.m_3
+        top: res(44)
+        left: res(1157)
+
+      &.m_4
+        top: res(668)
+        left: res(923)
+
+  .l
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 2
+
+    .al
+      display: block
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      @include p5($al)
+      z-index: 102
+
+    .ar
+      display: block
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+      @include p5($ar)
+      z-index: 102
+
+    .sl
+      position: absolute
+      left: 0
+      top: 0
+      width: res(190)
+      height: 100%
+      background: url(../img/gl.png) repeat-y left top
+      background-size: res(190) auto
+      z-index: 100
+
+    .sr
+      position: absolute
+      right: 0
+      top: 0
+      width: res(190)
+      height: 100%
+      background: url(../img/gr.png) repeat-y right top
+      background-size: res(190) auto
+      z-index: 100
+
+    .carousel
+      width: 100%
+      height: res(410)
+      margin-top: res(50)
+      padding-top: res(50)
+      overflow: hidden
+      z-index: 10
+
+      .banner
+        position: relative
+        left: 0
+        white-space: nowrap
+
+        li
+          display: inline-block
+          position: relative
+          padding: res(10) res(20) res(30) res(10)
+          transform: translate(0,0) scale(.8)
+          overflow: hidden
+
+          &.on
+            transform: translate(0,0) scale(1)
+      img
+        @include size(236, 418)
+
+    .t1, .t3, .t5
+      position: absolute
+      top: res(772)
+      left: 50%
+      transform: translateX(-50%)
+      opacity: 0
+      transition: .5s 1.4s linear
+
+      .t11
+        position: absolute
+        left: res(-40)
+        top: 0
+        @include p4($l4-3)
+
+      .t12
+        position: absolute
+        right: res(-40)
+        top: 0
+        @include p4($l4-3)
+
+    .t2, .t4, .t6
+      position: absolute
+      top: res(822)
+      left: 50%
+      transform: translateX(-50%)
+      opacity: 0
+      transition: .5s 1.6s linear
+
+      .t21
+        position: absolute
+        left: res(-40)
+        top: res(4)
+        @include p3($c-1)
+
+      .t22
+        position: absolute
+        right: res(-40)
+        top: res(4)
+        @include p3($c-1)
+
+    .t1
+      @include p5($t5-1)
+    .t2
+      @include p5($t5-2)
+    .t3
+      @include p5($t6-1)
+    .t4
+      @include p5($t6-2)
+    .t5
+      @include p5($t7-1)
+    .t6
+      @include p5($t7-2)
+
+  &.active
+    .t1, .t3, .t5
+      top: res(572)
+      opacity: 1
+
+    .t2, .t4, .t6
+      top: res(622)
+      opacity: 1
+
+
+

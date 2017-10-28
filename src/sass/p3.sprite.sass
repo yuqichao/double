@@ -1,0 +1,132 @@
+// SASS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home
+//   width: $icon-home-width
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites
+$c-1-name: 'c_1'
+$c-1-x: 1218
+$c-1-y: 32
+$c-1-offset-x: -1218
+$c-1-offset-y: -32
+$c-1-width: 16
+$c-1-height: 16
+$c-1-total-width: 1285
+$c-1-total-height: 254
+$c-1-image: 'p3.sprite.png'
+$c-1: (1218, 32, -1218, -32, 16, 16, 1285, 254, 'p3.sprite.png', 'c_1', )
+$c-2-name: 'c_2'
+$c-2-x: 0
+$c-2-y: 0
+$c-2-offset-x: 0
+$c-2-offset-y: 0
+$c-2-width: 254
+$c-2-height: 254
+$c-2-total-width: 1285
+$c-2-total-height: 254
+$c-2-image: 'p3.sprite.png'
+$c-2: (0, 0, 0, 0, 254, 254, 1285, 254, 'p3.sprite.png', 'c_2', )
+$c-3-name: 'c_3'
+$c-3-x: 259
+$c-3-y: 0
+$c-3-offset-x: -259
+$c-3-offset-y: 0
+$c-3-width: 220
+$c-3-height: 220
+$c-3-total-width: 1285
+$c-3-total-height: 254
+$c-3-image: 'p3.sprite.png'
+$c-3: (259, 0, -259, 0, 220, 220, 1285, 254, 'p3.sprite.png', 'c_3', )
+$t3-1-name: 't3_1'
+$t3-1-x: 484
+$t3-1-y: 32
+$t3-1-offset-x: -484
+$t3-1-offset-y: -32
+$t3-1-width: 518
+$t3-1-height: 27
+$t3-1-total-width: 1285
+$t3-1-total-height: 254
+$t3-1-image: 'p3.sprite.png'
+$t3-1: (484, 32, -484, -32, 518, 27, 1285, 254, 'p3.sprite.png', 't3_1', )
+$t3-2-name: 't3_2'
+$t3-2-x: 484
+$t3-2-y: 0
+$t3-2-offset-x: -484
+$t3-2-offset-y: 0
+$t3-2-width: 801
+$t3-2-height: 27
+$t3-2-total-width: 1285
+$t3-2-total-height: 254
+$t3-2-image: 'p3.sprite.png'
+$t3-2: (484, 0, -484, 0, 801, 27, 1285, 254, 'p3.sprite.png', 't3_2', )
+$t3-3-name: 't3_3'
+$t3-3-x: 1007
+$t3-3-y: 32
+$t3-3-offset-x: -1007
+$t3-3-offset-y: -32
+$t3-3-width: 206
+$t3-3-height: 16
+$t3-3-total-width: 1285
+$t3-3-total-height: 254
+$t3-3-image: 'p3.sprite.png'
+$t3-3: (1007, 32, -1007, -32, 206, 16, 1285, 254, 'p3.sprite.png', 't3_3', )
+$spritesheet-width: 1285
+$spritesheet-height: 254
+$spritesheet-image: 'p3.sprite.png'
+$spritesheet-sprites: ($c-1, $c-2, $c-3, $t3-1, $t3-2, $t3-3, )
+$spritesheet: (1285, 254, 'p3.sprite.png', $spritesheet-sprites, )
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home
+//   @include sprite-width($icon-home)
+//
+// .icon-email
+//   @include sprite($icon-email)
+//
+// Example usage in HTML:
+//   `display: block` sprite:
+//   <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//   // CSS
+//   .icon {
+//     display: inline-block;
+//   }
+//
+//   // HTML
+//   <i class="icon icon-home"></i>
+//@mixin sprite-width($sprite)
+//  width: nth($sprite, 5)
+//
+//@mixin sprite-height($sprite)
+//  height: nth($sprite, 6)
+//
+//@mixin sprite-position($sprite)
+//  $sprite-offset-x: nth($sprite, 3)
+//  $sprite-offset-y: nth($sprite, 4)
+//  background-position: $sprite-offset-x  $sprite-offset-y
+//
+//@mixin sprite-image($sprite)
+//  $sprite-image: nth($sprite, 9)
+//  background-image: url(#{$sprite-image})
+//
+//@mixin sprite($sprite)
+//  @include sprite-image($sprite)
+//  @include sprite-position($sprite)
+//  @include sprite-width($sprite)
+//  @include sprite-height($sprite)
+//
+//// The `sprites` mixin generates identical output to the CSS template
+////   but can be overridden inside of SASS
+////
+//// @include sprites($spritesheet-sprites)
+//@mixin sprites($sprites)
+//  @each $sprite in $sprites
+//    $sprite-name: nth($sprite, 10)
+//    .#{$sprite-name}
+//      @include sprite($sprite)

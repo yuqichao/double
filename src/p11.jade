@@ -1,0 +1,41 @@
+extends temp/template
+block content
+  .p11
+    .l
+      .t_1
+      .t_2
+        .t21
+        .t22
+        .t23
+        .t24
+      .t_3
+        .t31
+        .t32
+      .t_4
+      .t_5
+      .t_6
+      .t_7
+
+    .m
+      .m_1
+      .m_2
+      .m_3
+      .m_4
+      .m_5
+    .e
+      .e_1
+      .e_2
+
+
+append js
+  script.
+    $(function(){
+      setTimeout(function(){
+        $('.p4').addClass('on');
+      }, 1000)
+
+      $('.box a').on('click', function(){
+        $('.ctn .a').hide().eq($(this).index()).show();
+      })
+
+    })

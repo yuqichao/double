@@ -1,0 +1,140 @@
+$p12-width: 997
+$p12-height: 291
+
+@import "p12.sprite.sass"
+
+@mixin p12($sprite)
+  @include sprite($sprite)
+  background-size: res($p12-width) res($p12-height)
+
+.p12
+  position: relative
+  width: 100%
+  height: 100%
+  background: url(../img/p2.jpg) no-repeat center center
+  background-size: cover
+  overflow: hidden
+
+  .e
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 1
+
+  .e
+    .e_1
+      position: absolute
+      left: res(20)
+      top: res(20)
+      @include p2($l-2)
+
+    .e_2
+      position: absolute
+      right: res(20)
+      bottom: res(20)
+      @include p2($l-1)
+
+    .e_3
+      position: absolute
+      left: res(20)
+      bottom: res(20)
+      @include p12($t12-1)
+
+    .e_4
+      position: absolute
+      right: res(20)
+      top: res(20)
+      @include p12($t12-3)
+
+    .e_5
+      position: absolute
+      right: res(40)
+      bottom: res(20)
+      @include p12($t12-2)
+  .l
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 2
+
+    .t_1
+      position: absolute
+      top: res(316)
+      left: 50%
+      transform: translateX(-50%) scale(2)
+      opacity: 0
+      transition: .6s 1s
+      @include p12($t12-4)
+
+    .t_2
+      position: absolute
+      top: res(264)
+      left: 50%
+      transform: translateX(-50%)
+      @include size(541, 113)
+
+      .t21
+        position: absolute
+        left: 0
+        top: res(-60)
+        @include p12($t12-5-1)
+        opacity: 0
+        transition: .6s 1.3s
+      .t22
+        position: absolute
+        left: res(157)
+        top: res(-56)
+        @include p12($t12-5-2)
+        opacity: 0
+        transition: .6s 1.5s
+      .t23
+        position: absolute
+        left: res(296)
+        top: res(-57)
+        @include p12($t12-5-3)
+        opacity: 0
+        transition: .6s 1.7s
+      .t24
+        position: absolute
+        left: res(447)
+        top: res(-60)
+        @include p12($t12-5-4)
+        opacity: 0
+        transition: .6s 1.9s
+
+
+    .t_3
+      position: absolute
+      top: res(438)
+      left: 50%
+      transform: translateX(-50%)
+      opacity: 0
+      transition: .8s 2.4s
+      @include p12($t12-6)
+
+    .t_4
+      position: absolute
+      top: res(504)
+      left: 50%
+      transform: translateX(-50%)
+      opacity: 0
+      transition: .8s 2.7s
+      @include p12($t12-7)
+
+  &.active
+    .t_1
+      transform: translateX(-50%) scale(1)
+      opacity: 1
+    .t_2
+      div
+        opacity: 1!important
+      .t21
+        top: 0
+      .t22
+        top: res(4)
+      .t23
+        top: res(3)
+      .t24
+        top: 0
+    .t_3, .t_4
+      opacity: 1

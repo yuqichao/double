@@ -1,0 +1,13 @@
+extends temp/template
+block content
+  .p1
+    .t
+      each n, i in new Array(13)
+        div(class='t_' + (i + 1))
+    .m
+      each n, i in new Array(21)
+        div(class='m_' + (i + 1))
+  .loading
+    .progress
+      span
+      |%

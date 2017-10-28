@@ -1,0 +1,99 @@
+// SASS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home
+//   width: $icon-home-width
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites
+$t11-1-name: 't11_1'
+$t11-1-x: 0
+$t11-1-y: 62
+$t11-1-offset-x: 0
+$t11-1-offset-y: -62
+$t11-1-width: 199
+$t11-1-height: 56
+$t11-1-total-width: 1374
+$t11-1-total-height: 118
+$t11-1-image: 'p11.sprite.png'
+$t11-1: (0, 62, 0, -62, 199, 56, 1374, 118, 'p11.sprite.png', 't11_1', )
+$t11-2-name: 't11_2'
+$t11-2-x: 0
+$t11-2-y: 0
+$t11-2-offset-x: 0
+$t11-2-offset-y: 0
+$t11-2-width: 505
+$t11-2-height: 57
+$t11-2-total-width: 1374
+$t11-2-total-height: 118
+$t11-2-image: 'p11.sprite.png'
+$t11-2: (0, 0, 0, 0, 505, 57, 1374, 118, 'p11.sprite.png', 't11_2', )
+$t11-3-name: 't11_3'
+$t11-3-x: 510
+$t11-3-y: 0
+$t11-3-offset-x: -510
+$t11-3-offset-y: 0
+$t11-3-width: 864
+$t11-3-height: 23
+$t11-3-total-width: 1374
+$t11-3-total-height: 118
+$t11-3-image: 'p11.sprite.png'
+$t11-3: (510, 0, -510, 0, 864, 23, 1374, 118, 'p11.sprite.png', 't11_3', )
+$spritesheet-width: 1374
+$spritesheet-height: 118
+$spritesheet-image: 'p11.sprite.png'
+$spritesheet-sprites: ($t11-1, $t11-2, $t11-3, )
+$spritesheet: (1374, 118, 'p11.sprite.png', $spritesheet-sprites, )
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home
+//   @include sprite-width($icon-home)
+//
+// .icon-email
+//   @include sprite($icon-email)
+//
+// Example usage in HTML:
+//   `display: block` sprite:
+//   <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//   // CSS
+//   .icon {
+//     display: inline-block;
+//   }
+//
+//   // HTML
+//   <i class="icon icon-home"></i>
+//@mixin sprite-width($sprite)
+//  width: nth($sprite, 5)
+//
+//@mixin sprite-height($sprite)
+//  height: nth($sprite, 6)
+//
+//@mixin sprite-position($sprite)
+//  $sprite-offset-x: nth($sprite, 3)
+//  $sprite-offset-y: nth($sprite, 4)
+//  background-position: $sprite-offset-x  $sprite-offset-y
+//
+//@mixin sprite-image($sprite)
+//  $sprite-image: nth($sprite, 9)
+//  background-image: url(#{$sprite-image})
+//
+//@mixin sprite($sprite)
+//  @include sprite-image($sprite)
+//  @include sprite-position($sprite)
+//  @include sprite-width($sprite)
+//  @include sprite-height($sprite)
+//
+//// The `sprites` mixin generates identical output to the CSS template
+////   but can be overridden inside of SASS
+////
+//// @include sprites($spritesheet-sprites)
+//@mixin sprites($sprites)
+//  @each $sprite in $sprites
+//    $sprite-name: nth($sprite, 10)
+//    .#{$sprite-name}
+//      @include sprite($sprite)

@@ -1,0 +1,349 @@
+extends temp/template
+block content
+  #fullpage: .section
+    .slide.p1
+      .t
+        each n, i in new Array(13)
+          div(class='t_' + (i + 1))
+      .m
+        each n, i in new Array(21)
+          div(class='m_' + (i + 1))
+    .slide.p2
+      .l
+        .l_1
+          .point
+          .tit
+            p 昨天
+            span
+          .txt
+            .t1
+            .t2
+        .l_2
+          .point
+          .tit
+            p 今天
+            span
+          .txt
+            .t1
+            .t2
+        .l_3
+          .point
+          .tit
+            p 明天
+            span
+          .txt
+            .t1
+            .t2
+      .m
+        .m_1
+        .m_2
+        .m_3
+        .m_4
+      .e
+        .e_1
+        .e_2
+
+
+    .slide.p3
+      .l
+        .c
+        .c1
+        img(src="./img/logo.svg")
+        .t1
+          .t11
+          .t12
+        .t2
+
+      .m
+        .m_1
+        .m_2
+        .m_3
+        .m_4
+      .e
+        .e_1
+        .e_2
+        .e_3
+    .slide.p4
+      .l
+        .box
+          a.on.p_1(href="javascript:;")
+            .txt 翟雅阁博物馆
+          a.p_2(href="javascript:;")
+            .txt 南太子湖创新谷
+          a.p_3(href="javascript:;")
+            .txt 湖北美术学院美术馆
+        .t
+          .tit
+          .i
+          .t_1
+          .t_2
+        .ctn
+          .a.a1.on
+            .line
+            a.link(href="javascript:;", data-type="0", data-i="0") 全景
+            a.link(href="javascript:;", data-type="1", data-i="0") 视频
+          .a.a2
+            .line
+            a.link(href="javascript:;", data-type="0", data-i="1") 全景
+            a.link(href="javascript:;", data-type="1", data-i="1") 视频
+          .a.a3
+            .line
+            a.link(href="javascript:;", data-type="0", data-i="2") 全景
+            a.link(href="javascript:;", data-type="1", data-i="2") 视频
+      .m
+        .m_1
+        .m_2
+        .m_3
+        .m_4
+      .e
+        .e_1
+        .e_2
+        .e_3
+
+    .slide.p5
+      .l
+        a.al(href="javascript:;")
+        a.ar(href="javascript:;")
+
+        .sl
+        .sr
+        .carousel
+          ul.banner
+            each item, index in new Array(10)
+              li(class=(index === 0 ? 'on' : '')): .item
+                img(src="./img/c/5-" + (index + 1) + ".png")
+        .t1
+          .t11
+          .t12
+        .t2
+          .t21
+          .t22
+      .m
+        .m_1
+        .m_2
+        .m_3
+        .m_4
+      .e
+        .e_1
+        .e_2
+        .e_3
+        .e_4
+    .slide.p6
+      .l
+        a.al(href="javascript:;")
+        a.ar(href="javascript:;")
+        .sl
+        .sr
+        .carousel
+          ul.banner
+            each item, index in new Array(9)
+              li(class=(index === 0 ? 'on' : '')): .item
+                img(src="./img/c/6-" + (index + 1) + ".png")
+        .t3
+          .t11
+          .t12
+        .t4
+          .t21
+          .t22
+      .m
+        .m_1
+        .m_2
+        .m_3
+        .m_4
+      .e
+        .e_1
+        .e_2
+        .e_3
+        .e_4
+    .slide.p7
+      .l
+        a.al(href="javascript:;")
+        a.ar(href="javascript:;")
+        .sl
+        .sr
+        .carousel
+          ul.banner
+            each item, index in new Array(7)
+              li(class=(index === 0 ? 'on' : '')): .item
+                img(src="./img/c/7-" + (index + 1) + ".png")
+        .t5
+          .t11
+          .t12
+        .t6
+          .t21
+          .t22
+      .m
+        .m_1
+        .m_2
+        .m_3
+        .m_4
+      .e
+        .e_1
+        .e_2
+        .e_3
+        .e_4
+
+    .slide.p8
+      .l
+        a.box.ba(href="javascript:;", data-i="0")
+          .b1
+          .b2
+          .tit
+          .btn
+        a.box.bb(href="javascript:;", data-i="1")
+          .b1
+          .b2
+          .tit
+          .btn
+        a.box.bc(href="javascript:;", data-i="2")
+          .b1
+          .b2
+          .tit
+          .btn
+
+        .t1
+          .t11
+          .t12
+        .t2
+      .e
+        .e_1
+        .e_2
+    .slide.p9
+      .l
+        a.box.bd(href="javascript:;", data-i="3")
+          .b3
+          .b4
+          .tit
+          .btn
+        a.box.be(href="javascript:;", data-i="4")
+          .b3
+          .b4
+          .tit
+          .btn
+        a.box.bf(href="javascript:;", data-i="5")
+          .b3
+          .b4
+          .tit
+          .btn
+        .t3
+          .t11
+          .t12
+        .t4
+      .e
+        .e_1
+        .e_2
+    .slide.p10
+      .l
+        .t_1
+        .t_2
+          .t21
+          .t22
+          .t23
+          .t24
+        .t_3
+          .t31
+          .t32
+        .t_4
+        .t_5
+        .t_6
+        .t_7
+
+      .m
+        .m_1
+        .m_2
+        .m_3
+        .m_4
+        .m_5
+      .e
+        .e_1
+        .e_2
+    .slide.p11
+      .l
+        .t_1
+        .t_2
+        .t_3
+          .t1: .sub
+      .m
+        .m_1
+        .m_2
+        .m_3
+      .e
+        .e_1
+        .e_2
+        .e_3
+
+    .slide.p12
+      .l
+        .t_1
+        .t_2
+          .t21
+          .t22
+          .t23
+          .t24
+        .t_3
+        .t_4
+
+      .e
+        .e_1
+        .e_2
+        .e_3
+        .e_4
+        .e_5
+    .slide.p13
+      .l
+        .t_1
+        .t_2
+          .t21
+          .t22
+          .t23
+          .t24
+          .t25
+          .t26
+          .t27
+          .t28
+          .t29
+          .t210
+        .t_3
+        .t_4
+        .t_5
+        .t_6
+
+      .e
+        .e_1
+        .e_2
+        .e_3
+        .e_4
+        .e_5
+    .slide.p14
+      .l
+        .t_1
+        .t_2
+          .t21
+          .t22
+          .t23
+          .t24
+          .t25
+          .t26
+          .t27
+          .t28
+          .t29
+          .t210
+        .t_4
+        .t_5
+        .t_6
+        .t_7
+        .t_8: input(type="text")
+        .t_9
+
+      .e
+        .e_1
+        .e_2
+        .e_3
+        .e_4
+        .e_5
+    .slide.loading.active
+      .progress
+        span
+        | %
+  .orient
+    .tips 横屏观看效果更佳哦！

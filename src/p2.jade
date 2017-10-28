@@ -1,0 +1,44 @@
+extends temp/template
+block content
+  .p2
+    .l
+      .l_1
+        .point
+        .tit
+          p 昨天
+          span
+        .txt
+          .t1
+          .t2
+      .l_2
+        .point
+        .tit
+          p 今天
+          span
+        .txt
+          .t1
+          .t2
+      .l_3
+        .point
+        .tit
+          p 明天
+          span
+        .txt
+          .t1
+          .t2
+    .m
+      .m_1
+      .m_2
+      .m_3
+      .m_4
+    .e
+      .e_1
+      .e_2
+
+append js
+  script.
+    $(function(){
+      setTimeout(function(){
+        $('.p2').addClass('on');
+      }, 1000)
+    })

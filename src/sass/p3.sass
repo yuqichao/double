@@ -1,0 +1,137 @@
+$p3-width: 1285
+$p3-height: 254
+
+@import "p3.sprite.sass"
+
+@mixin p3($sprite)
+  @include sprite($sprite)
+  background-size: res($p3-width) res($p3-height)
+
+.p3
+  position: relative
+  width: 100%
+  height: 100%
+  background: url(../img/p2.jpg) no-repeat center center
+  background-size: cover
+  overflow: hidden
+
+  .e, .m
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 1
+
+  .e
+    .e_1
+      position: absolute
+      left: res(20)
+      top: res(20)
+      @include p2($l-2)
+
+    .e_2
+      position: absolute
+      right: res(20)
+      bottom: res(20)
+      @include p2($l-1)
+
+    .e_3
+      position: absolute
+      right: res(20)
+      top: res(20)
+      @include p3($t3-3)
+
+  .m
+    div
+      position: absolute
+      @include p2($l-3)
+
+      &.m_1
+        top: res(626)
+        left: res(224)
+
+      &.m_2
+        top: res(228)
+        left: res(394)
+
+      &.m_3
+        top: res(234)
+        left: res(1157)
+
+      &.m_4
+        top: res(468)
+        left: res(1123)
+
+  .l
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    @include size(120, 120)
+
+    .c
+      position: absolute
+      left: 50%
+      top: 35%
+      transform: translate(-50%, -50%)
+      @include p3($c-2)
+      animation: roll 6s linear infinite both
+
+    .c1
+      position: absolute
+      left: 50%
+      top: 36%
+      transform: translate(-50%, -50%)
+      @include p3($c-3)
+      animation: roll 8s linear reverse infinite both
+
+    img
+      position: absolute
+      left: 50%
+      top: 40%
+      transform: translate(-50%, -50%)
+      @include size(120, 120)
+
+    .t1
+      position: absolute
+      top: res(300)
+      left: 50%
+      transform: translateX(-50%)
+      @include p3($t3-1)
+      opacity: 0
+      transition: .6s 1s linear
+
+    .t11
+      position: absolute
+      left: res(-60)
+      top: 0
+      @include p3($c-1)
+
+    .t12
+      position: absolute
+      right: res(-60)
+      top: 0
+      @include p3($c-1)
+
+    .t2
+      position: absolute
+      top: res(370)
+      left: 50%
+      transform: translateX(-50%)
+      @include p3($t3-2)
+      opacity: 0
+      transition: .6s 1.3s linear
+
+  &.active
+    .t1
+      top: res(200)
+      opacity: 1
+    .t2
+      top: res(270)
+      opacity: 1
+
+@keyframes roll
+  0%
+    transform: translate(-50%,-50%) rotate(0)
+  100%
+    transform: translate(-50%,-50%) rotate(360deg)
+

@@ -1,0 +1,200 @@
+*
+  margin: 0
+  padding: 0
+  list-style: none
+  border: none
+  outline: none
+  text-decoration: none
+  box-sizing: border-box
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  -webkit-appearance: none
+  -webkit-overflow-scrolling: touch
+
+html, body
+  width: 100%
+  height: 100%
+
+@function res($val)
+  @if($val == 0)
+    @return 0
+  @return $val / (1334 / 320) / 20 * 1rem
+
+@mixin clear()
+  zoom: 1
+
+  &:after
+    content: ''
+    display: block
+    clear: both
+
+@mixin size($w, $h)
+  width: res($w)
+  height: res($h)
+
+@mixin bg($url)
+  background-image: url($url)
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: contain
+
+@mixin bgSize($url, $w, $h)
+  @include size($w, $h)
+  @include bg($url)
+  background-size: res($w) res($h)
+
+@mixin bguSize($url, $w, $h)
+  @include bg($url)
+  background-size: res($w) res($h)
+
+
+@mixin font($s, $h, $c: #020202)
+  font: #{res($s)}/#{res($h)} 'HelveticaNeue'
+  color: $c
+
+@mixin box()
+  display: -webkit-box
+  display: flex
+
+@mixin flex($n)
+  -webkit-box-flex: $n
+  -webkit-flex: $n
+
+@mixin vertical()
+  -webkit-box-orient: vertical
+  -webkit-flex-direction: column
+
+@mixin horizontal()
+  -webkit-box-orient: horizontal
+  -webkit-flex-direction: row
+
+@mixin sprite-width($sprite)
+  width: res(nth($sprite, 5))
+
+@mixin sprite-height($sprite)
+  height: res(nth($sprite, 6))
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: res(nth($sprite, 3))
+  $sprite-offset-y: res(nth($sprite, 4))
+  background-position: $sprite-offset-x $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(../img/#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+.slide
+
+  .l, .m, .e
+    left: 0
+    top: 0
+
+    @for $i from 1 through 7
+      .m_#{$i}
+        opacity: 0
+        transition: opacity .4s .3s*$i linear
+
+  .e div
+    opacity: 0
+    transition: all .4s .4s linear
+    &.e_1
+      transform: translateY(res(-200))
+    &.e_2
+      transform: translateX(res(200))
+    &.e_5
+      transform: translateX(res(400))
+    &.e_3
+      transform: translateY(res(-100))
+    &.e_4
+      transform: translateX(res(-300))
+
+.p2, .p3, .p4, .p5, .p6, .p7, .p8,
+.p9, .p10, .p11, .p12, .p13, .p14
+  &.active
+    .m
+      @for $i from 1 through 7
+        .m_#{$i}
+          opacity: 1
+
+    .e div
+      opacity: 1
+      transform: translate(0, 0)
+
+.p0
+  position: relative
+  width: 100%
+  height: 100%
+
+.loading
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  background: #000
+  z-index: 300
+
+  .progress
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: res(164)
+    height: res(190)
+    padding-top: res(130)
+    background: url(../img/loading.png) no-repeat center top
+    background-size: res(163) res(130)
+    @include font(32, 60, #fff)
+    text-align: center
+
+@import "p1"
+@import "p2"
+@import "p3"
+@import "p4"
+@import "p5" //p5,p6,p7
+@import "p8" //p8,p9
+@import "p10"
+@import "p11"
+@import "p12"
+@import "p13" //p13,p14
+
+.popVr, .popVod
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+  .close
+    position: absolute
+    left: res(10)
+    top: res(10)
+    z-index: 10
+    display: block
+    padding: res(20)
+    background: #fff
+    border-radius: 50%
+    span
+      display: block
+      @include p8($close)
+
+  iframe
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    z-index: 1
+
+  video
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    z-index: 1

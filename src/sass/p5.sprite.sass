@@ -1,0 +1,165 @@
+// SASS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home
+//   width: $icon-home-width
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites
+$al-name: 'al'
+$al-x: 200
+$al-y: 149
+$al-offset-x: -200
+$al-offset-y: -149
+$al-width: 64
+$al-height: 64
+$al-total-width: 763
+$al-total-height: 247
+$al-image: 'p5.sprite.png'
+$al: (200, 149, -200, -149, 64, 64, 763, 247, 'p5.sprite.png', 'al', )
+$ar-name: 'ar'
+$ar-x: 269
+$ar-y: 149
+$ar-offset-x: -269
+$ar-offset-y: -149
+$ar-width: 64
+$ar-height: 64
+$ar-total-width: 763
+$ar-total-height: 247
+$ar-image: 'p5.sprite.png'
+$ar: (269, 149, -269, -149, 64, 64, 763, 247, 'p5.sprite.png', 'ar', )
+$e5-4-name: 'e5_4'
+$e5-4-x: 0
+$e5-4-y: 120
+$e5-4-offset-x: 0
+$e5-4-offset-y: -120
+$e5-4-width: 195
+$e5-4-height: 97
+$e5-4-total-width: 763
+$e5-4-total-height: 247
+$e5-4-image: 'p5.sprite.png'
+$e5-4: (0, 120, 0, -120, 195, 97, 763, 247, 'p5.sprite.png', 'e5_4', )
+$t5-1-name: 't5_1'
+$t5-1-x: 200
+$t5-1-y: 120
+$t5-1-offset-x: -200
+$t5-1-offset-y: -120
+$t5-1-width: 510
+$t5-1-height: 24
+$t5-1-total-width: 763
+$t5-1-total-height: 247
+$t5-1-image: 'p5.sprite.png'
+$t5-1: (200, 120, -200, -120, 510, 24, 763, 247, 'p5.sprite.png', 't5_1', )
+$t5-2-name: 't5_2'
+$t5-2-x: 0
+$t5-2-y: 222
+$t5-2-offset-x: 0
+$t5-2-offset-y: -222
+$t5-2-width: 567
+$t5-2-height: 25
+$t5-2-total-width: 763
+$t5-2-total-height: 247
+$t5-2-image: 'p5.sprite.png'
+$t5-2: (0, 222, 0, -222, 567, 25, 763, 247, 'p5.sprite.png', 't5_2', )
+$t6-1-name: 't6_1'
+$t6-1-x: 0
+$t6-1-y: 0
+$t6-1-offset-x: 0
+$t6-1-offset-y: 0
+$t6-1-width: 763
+$t6-1-height: 25
+$t6-1-total-width: 763
+$t6-1-total-height: 247
+$t6-1-image: 'p5.sprite.png'
+$t6-1: (0, 0, 0, 0, 763, 25, 763, 247, 'p5.sprite.png', 't6_1', )
+$t6-2-name: 't6_2'
+$t6-2-x: 0
+$t6-2-y: 90
+$t6-2-offset-x: 0
+$t6-2-offset-y: -90
+$t6-2-width: 685
+$t6-2-height: 25
+$t6-2-total-width: 763
+$t6-2-total-height: 247
+$t6-2-image: 'p5.sprite.png'
+$t6-2: (0, 90, 0, -90, 685, 25, 763, 247, 'p5.sprite.png', 't6_2', )
+$t7-1-name: 't7_1'
+$t7-1-x: 0
+$t7-1-y: 30
+$t7-1-offset-x: 0
+$t7-1-offset-y: -30
+$t7-1-width: 688
+$t7-1-height: 25
+$t7-1-total-width: 763
+$t7-1-total-height: 247
+$t7-1-image: 'p5.sprite.png'
+$t7-1: (0, 30, 0, -30, 688, 25, 763, 247, 'p5.sprite.png', 't7_1', )
+$t7-2-name: 't7_2'
+$t7-2-x: 0
+$t7-2-y: 60
+$t7-2-offset-x: 0
+$t7-2-offset-y: -60
+$t7-2-width: 688
+$t7-2-height: 25
+$t7-2-total-width: 763
+$t7-2-total-height: 247
+$t7-2-image: 'p5.sprite.png'
+$t7-2: (0, 60, 0, -60, 688, 25, 763, 247, 'p5.sprite.png', 't7_2', )
+$spritesheet-width: 763
+$spritesheet-height: 247
+$spritesheet-image: 'p5.sprite.png'
+$spritesheet-sprites: ($al, $ar, $e5-4, $t5-1, $t5-2, $t6-1, $t6-2, $t7-1, $t7-2, )
+$spritesheet: (763, 247, 'p5.sprite.png', $spritesheet-sprites, )
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home
+//   @include sprite-width($icon-home)
+//
+// .icon-email
+//   @include sprite($icon-email)
+//
+// Example usage in HTML:
+//   `display: block` sprite:
+//   <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//   // CSS
+//   .icon {
+//     display: inline-block;
+//   }
+//
+//   // HTML
+//   <i class="icon icon-home"></i>
+//@mixin sprite-width($sprite)
+//  width: nth($sprite, 5)
+//
+//@mixin sprite-height($sprite)
+//  height: nth($sprite, 6)
+//
+//@mixin sprite-position($sprite)
+//  $sprite-offset-x: nth($sprite, 3)
+//  $sprite-offset-y: nth($sprite, 4)
+//  background-position: $sprite-offset-x  $sprite-offset-y
+//
+//@mixin sprite-image($sprite)
+//  $sprite-image: nth($sprite, 9)
+//  background-image: url(#{$sprite-image})
+//
+//@mixin sprite($sprite)
+//  @include sprite-image($sprite)
+//  @include sprite-position($sprite)
+//  @include sprite-width($sprite)
+//  @include sprite-height($sprite)
+//
+//// The `sprites` mixin generates identical output to the CSS template
+////   but can be overridden inside of SASS
+////
+//// @include sprites($spritesheet-sprites)
+//@mixin sprites($sprites)
+//  @each $sprite in $sprites
+//    $sprite-name: nth($sprite, 10)
+//    .#{$sprite-name}
+//      @include sprite($sprite)

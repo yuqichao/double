@@ -1,0 +1,239 @@
+$p1-width: 336
+$p1-height: 313
+
+@import "p1.sprite.sass"
+
+@mixin p1($sprite)
+  @include sprite($sprite)
+  background-size: res($p1-width) res($p1-height)
+
+.p1
+  position: relative
+  width: 100%
+  height: 100%
+  background: url(../img/p1.jpg) no-repeat center center
+  background-size: cover
+  overflow: hidden
+
+  .t
+    position: absolute
+    top: 50%
+    left: 50%
+    width: res(710)
+    height: res(30)
+    padding: 0 res(30)
+    transform: translate(-50%, -50%) scale(3)
+    transition: transform .8s, opacity 1.6s
+    opacity: 0
+
+    div
+      float: left
+      margin: 0 res(10)
+
+    .t_1
+      @include p1($t-1)
+    .t_2
+      @include p1($t-2)
+    .t_3
+      @include p1($t-3)
+    .t_4
+      @include p1($t-2)
+    .t_5
+      @include p1($t-4)
+    .t_6
+      @include p1($t-4)
+    .t_7
+      @include p1($t-2)
+    .t_8
+      @include p1($t-5)
+    .t_9
+      @include p1($t-6)
+    .t_10
+      @include p1($t-2)
+    .t_11
+      @include p1($t-3)
+    .t_12
+      @include p1($t-7)
+    .t_13
+      @include p1($t-8)
+
+  .m
+    position: absolute
+    top: 50%
+    left: 50%
+    -webkit-perspective: 1000px
+    transform: translate(-50%, -50%)
+    @include size(563, 120)
+
+    div
+      position: absolute
+      opacity: 0
+
+    .m_1
+      top: res(-148)
+      left: res(-130)
+      @include p1($m-1)
+    .m_7
+      top: res(170)
+      left: res(-150)
+      @include p1($m-7)
+    .m_8
+      top: res(90)
+      left: res(230)
+      @include p1($m-8)
+
+
+    .m_2
+      top: res(140)
+      left: res(360)
+      @include p1($m-2)
+    .m_9
+      top: res(-100)
+      left: res(160)
+      @include p1($m-9)
+    .m_10
+      top: res(30)
+      left: res(346)
+      @include p1($m-10)
+    .m_11
+      top: res(140)
+      left: res(-32)
+      @include p1($m-11)
+
+
+    .m_3
+      top: res(-80)
+      left: res(162)
+      @include p1($m-3)
+    .m_4
+      top: res(10)
+      left: res(206)
+      @include p1($m-4)
+    .m_12
+      top: res(-100)
+      left: res(350)
+      @include p1($m-12)
+    .m_13
+      top: res(140)
+      left: res(180)
+      @include p1($m-13)
+    .m_14
+      top: res(202)
+      left: res(350)
+      @include p1($m-14)
+    .m_20
+      top: res(198)
+      left: res(474)
+      @include p1($m-20)
+    .m_21
+      top: res(15)
+      left: res(460)
+      @include p1($m-21)
+
+    .m_5
+      top: res(188)
+      left: res(688)
+      @include p1($m-5)
+    .m_6
+      top: res(-40)
+      left: res(650)
+      @include p1($m-6)
+    .m_15
+      top: res(-110)
+      left: res(314)
+      @include p1($m-15)
+    .m_16
+      top: res(-78)
+      left: res(496)
+      @include p1($m-16)
+    .m_17
+      top: res(6)
+      left: res(637)
+      @include p1($m-17)
+    .m_18
+      top: res(58)
+      left: res(608)
+      @include p1($m-18)
+    .m_19
+      top: res(230)
+      left: res(414)
+      @include p1($m-19)
+
+  &.active
+    .t
+      transform: translate(-50%, -50%) scale(1)
+      opacity: 1
+
+    .m div
+      opacity: 1
+      transition: all .4s 1s linear
+
+    .m_1
+      top: res(8)
+      left: res(10)
+    .m_7
+      top: res(8)
+      left: res(0)
+    .m_8
+      top: res(8)
+      left: res(60)
+
+
+    .m_2
+      top: res(54)
+      left: res(210)
+    .m_9
+      top: res(10)
+      left: res(160)
+    .m_10
+      top: res(40)
+      left: res(206)
+    .m_11
+      top: res(49)
+      left: res(142)
+
+
+    .m_3
+      top: res(22)
+      left: res(312)
+    .m_4
+      top: res(28)
+      left: res(326)
+    .m_20
+      top: res(58)
+      left: res(364)
+    .m_21
+      top: res(15)
+      left: res(360)
+    .m_12
+      top: res(0)
+      left: res(350)
+    .m_13
+      top: res(48)
+      left: res(300)
+    .m_14
+      top: res(22)
+      left: res(350)
+
+
+    .m_5
+      top: res(68)
+      left: res(508)
+    .m_6
+      top: res(4)
+      left: res(520)
+    .m_15
+      top: res(0)
+      left: res(454)
+    .m_16
+      top: res(48)
+      left: res(496)
+    .m_17
+      top: res(21)
+      left: res(487)
+    .m_18
+      top: res(58)
+      left: res(458)
+    .m_19
+      top: res(70)
+      left: res(444)

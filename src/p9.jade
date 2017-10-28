@@ -1,0 +1,57 @@
+extends temp/template
+block content
+  .p9
+    .l
+      a.box.bd(href="javascript:;")
+        .b3
+        .b4
+        .tit
+        .btn
+      a.box.be(href="javascript:;")
+        .b3
+        .b4
+        .tit
+        .btn
+      a.box.bf(href="javascript:;")
+        .b3
+        .b4
+        .tit
+        .btn
+
+      .t3
+        .t11
+        .t12
+      .t4
+    .e
+      .e_1
+      .e_2
+
+  .pop: .wrap: .content
+    .c
+      .c1
+      .c2
+      .c3
+      .c4
+    .close
+    .ctn
+      dl
+        dt 翟雅阁博物馆
+          span zhaiyagebowuguan
+        each item in new Array(9)
+          dd
+            .tit
+              .d1
+              .txt 设计之都城市作品展
+              .d2
+            .time 11.11
+
+append js
+  script(src="./js/jquery.slide.js")
+  script.
+    $(function(){
+      setTimeout(function(){
+        $('.p4').addClass('on');
+      }, 1000)
+
+
+    })

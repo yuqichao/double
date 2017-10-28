@@ -1,0 +1,49 @@
+extends temp/template
+block content
+  .p4
+    .l
+      .box
+        a.p_1(href="javascript:;")
+        a.p_2(href="javascript:;")
+        a.p_3(href="javascript:;")
+      .t
+        .tit
+        .i
+        .t_1
+        .t_2
+      .ctn
+        .a.on
+          .line
+          a.link(href="javascript:;") 全景
+          a.link(href="javascript:;") 视频
+        .a
+          .line
+          a.link(href="javascript:;") 全景
+          a.link(href="javascript:;") 视频
+        .a
+          .line
+          a.link(href="javascript:;") 全景
+          a.link(href="javascript:;") 视频
+
+    .m
+      .m_1
+      .m_2
+      .m_3
+      .m_4
+    .e
+      .e_1
+      .e_2
+      .e_3
+
+append js
+  script.
+    $(function(){
+      setTimeout(function(){
+        $('.p4').addClass('on');
+      }, 1000)
+
+      $('.box a').on('click', function(){
+        $('.ctn .a').hide().eq($(this).index()).show();
+      })
+
+    })

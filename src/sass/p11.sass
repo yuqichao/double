@@ -1,0 +1,126 @@
+$p11-width: 1374
+$p11-height: 118
+
+@import "p11.sprite.sass"
+
+@mixin p11($sprite)
+  @include sprite($sprite)
+  background-size: res($p11-width) res($p11-height)
+
+.p11
+  position: relative
+  width: 100%
+  height: 100%
+  background: url(../img/p2.jpg) no-repeat center center
+  background-size: cover
+  overflow: hidden
+
+  .e, .m
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 1
+
+  .e
+    .e_1
+      position: absolute
+      left: res(20)
+      top: res(20)
+      @include p2($l-2)
+
+    .e_2
+      position: absolute
+      right: res(20)
+      bottom: res(20)
+      @include p2($l-1)
+
+    .e_3
+      position: absolute
+      left: res(20)
+      bottom: res(20)
+      @include p11($t11-1)
+
+  .m
+    div
+      position: absolute
+      @include p2($l-3)
+
+      &.m_1
+        top: res(626)
+        left: res(224)
+
+      &.m_2
+        top: res(142)
+        left: res(115)
+
+      &.m_3
+        top: res(44)
+        left: res(1157)
+
+      &.m_4
+        top: res(668)
+        left: res(923)
+
+      &.m_5
+        top: res(538)
+        left: res(1063)
+
+  .l
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 2
+
+    .t_1
+      position: absolute
+      left: 50%
+      top: res(290)
+      transform: translate(-50%, -50%) scale(2)
+      opacity: 0
+      @include p11($t11-2)
+      z-index: 3
+      transition: 2s 1.6s
+
+    .t_2
+      position: absolute
+      left: 50%
+      top: res(450)
+      transform: translate(-50%, -50%) scale(2)
+      opacity: 0
+      @include p11($t11-3)
+      z-index: 3
+      transition: 2s 1.2s
+
+    .t_3
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      @include size(257, 543)
+
+      .t1
+        position: absolute
+        left: 0
+        bottom: 0
+        @include bgSize('../img/flower.png',257, 543)
+        background-position: center bottom
+        z-index: 1
+
+  &.active
+    .t_1, .t_2
+      transform: translate(-50%, -50%) scale(1)
+      opacity: 1
+    .t_3 .t1
+      animation: flower 4s 1s both
+
+@keyframes flower
+  0%
+    height: 0
+    opacity: 0
+
+  100%
+    height: res(543)
+    opacity: 1
+
+
+

@@ -1,0 +1,187 @@
+$p10-width: 983
+$p10-height: 631
+
+@import "p10.sprite.sass"
+
+@mixin p10($sprite)
+  @include sprite($sprite)
+  background-size: res($p10-width) res($p10-height)
+
+.p10
+  position: relative
+  width: 100%
+  height: 100%
+  background: url(../img/p2.jpg) no-repeat center center
+  background-size: cover
+  overflow: hidden
+
+  .e, .m
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 1
+
+  .e
+    .e_1
+      position: absolute
+      left: res(20)
+      top: res(20)
+      @include p2($l-2)
+
+    .e_2
+      position: absolute
+      right: res(20)
+      bottom: res(20)
+      @include p2($l-1)
+
+  .m
+    div
+      position: absolute
+      @include p2($l-3)
+
+      &.m_1
+        top: res(626)
+        left: res(224)
+
+      &.m_2
+        top: res(142)
+        left: res(115)
+
+      &.m_3
+        top: res(44)
+        left: res(1157)
+
+      &.m_4
+        top: res(668)
+        left: res(923)
+
+      &.m_5
+        top: res(538)
+        left: res(1063)
+
+  .l
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 2
+
+    .t_1
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%) scale(4)
+      opacity: 0
+      transition: transform .8s 1s, opacity 1.6s 1s
+      @include p10($t10-1)
+
+    .t_2
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      @include size(932, 424)
+
+      div
+        transition: .8s 1.4s
+
+      .t21
+        position: absolute
+        left: res(-200)
+        top: 0
+        @include p10($t10-2-1)
+      .t22
+        position: absolute
+        left: 0
+        top: res(-200)
+        @include p10($t10-2-2)
+      .t23
+        position: absolute
+        right: res(-200)
+        top: 0
+        @include p10($t10-2-3)
+      .t24
+        position: absolute
+        left: 0
+        bottom: res(-200)
+        @include p10($t10-2-4)
+
+    .t_3
+      position: absolute
+      left: res(445)
+      top: res(250)
+      @include p10($t10-3)
+      opacity: 0
+      transform: scale(4)
+      transition: transform .6s 1.4s, opacity 1.6s 1.4s
+
+      .t31
+        position: absolute
+        left: res(-100)
+        bottom: res(-30)
+        @include p10($t10-8)
+
+      .t32
+        position: absolute
+        right: res(-60)
+        top: res(20)
+        @include p3($c-1)
+
+    .t_4
+      position: absolute
+      left: 50%
+      top:  res(382)
+      transform: translateX(-50%)
+      @include p10($t10-4)
+      opacity: 0
+      transition: .8s 1.6s
+
+    .t_5
+      position: absolute
+      left: 50%
+      top:  res(432)
+      transform: translateX(-50%)
+      @include p10($t10-5)
+      opacity: 0
+      transition: .8s 1.8s
+    .t_6
+      position: absolute
+      left: 50%
+      top:  res(482)
+      transform: translateX(-50%)
+      @include p10($t10-6)
+      opacity: 0
+      transition: .8s 2s
+    .t_7
+      position: absolute
+      left: 50%
+      top:  res(532)
+      transform: translateX(-50%)
+      @include p10($t10-7)
+      opacity: 0
+      transition: .8s 2.2s
+
+  &.active
+    .t_1
+      transform: translate(-50%, -50%) scale(1)
+      opacity: 1
+    .t_3
+      transform: scale(1)
+      opacity: 1
+
+    .l .t_2
+
+      .t21
+        left: 0
+        opacity: 1
+      .t22
+        top: 0
+        opacity: 1
+      .t23
+        right: 0
+        opacity: 1
+      .t24
+        bottom: 0
+        opacity: 1
+
+    .t_4,.t_5,.t_6,.t_7
+      opacity: 1

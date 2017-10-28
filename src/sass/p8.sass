@@ -1,0 +1,320 @@
+$p8-width: 1112
+$p8-height: 432
+
+@import "p8.sprite.sass"
+
+@mixin p8($sprite)
+  @include sprite($sprite)
+  background-size: res($p8-width) res($p8-height)
+
+.p8, .p9
+  position: relative
+  width: 100%
+  height: 100%
+  background: url(../img/p2.jpg) no-repeat center center
+  background-size: cover
+  overflow: hidden
+
+  .e, .m
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 1
+
+  .e
+    .e_1
+      position: absolute
+      left: res(20)
+      top: res(20)
+      @include p2($l-2)
+
+    .e_2
+      position: absolute
+      right: res(20)
+      bottom: res(20)
+      @include p2($l-1)
+
+  .l
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 2
+
+    .box
+      display: block
+      position: absolute
+      @include size(290, 290)
+
+      .b1
+        position: absolute
+        left: 50%
+        top: 50%
+        @include size(204, 204)
+        border: solid res(2) #fff
+        transform: translate(-50%, -50%) rotate(0)
+        animation: roll 8s 1s infinite linear both
+
+      .b2
+        position: absolute
+        left: 50%
+        top: 50%
+        @include size(204, 204)
+        border: solid res(2) #fff
+        transform: translate(-50%, -50%) rotate(45deg)
+        animation: roll 8s 1s infinite linear both reverse
+
+      .b3
+        position: absolute
+        left: 50%
+        top: 50%
+        @include size(244, 244)
+        border: solid res(2) #fff
+        border-radius: 50%
+        transform: translate(-50%, -50%)
+        animation: roll 8s 1s infinite linear both
+      .b4
+        position: absolute
+        left: 50%
+        top: 50%
+        @include p8($six)
+        transform: translate(-50%, -50%)
+        animation: roll 8s 1s infinite linear both reverse
+
+      .tit
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+
+      .btn
+        position: absolute
+        left: 50%
+        top: 76%
+        transform: translate(-50%, -50%)
+        @include p8($to)
+
+    .ba
+      left: res(215)
+      top: 0
+      opacity: 0
+      transition: .3s 1s linear
+
+      .tit
+        @include p8($t8-1)
+
+    .bb
+      left: res(570)
+      top: 0
+      opacity: 0
+      transition: .3s 1.2s linear
+
+      .tit
+        @include p8($t8-2)
+
+    .bc
+      left: res(924)
+      top: 0
+      opacity: 0
+      transition: .3s 1.4s linear
+
+      .tit
+        @include p8($t8-3)
+
+    .bd
+      left: res(215)
+      top: 0
+      opacity: 0
+      transition: .3s 1s linear
+
+      .tit
+        @include p8($t9-1)
+
+    .be
+      left: res(570)
+      top: 0
+      opacity: 0
+      transition: .3s 1.2s linear
+
+      .tit
+        @include p8($t9-2)
+
+    .bf
+      left: res(924)
+      top: 0
+      opacity: 0
+      transition: .3s 1.4s linear
+
+      .tit
+        @include p8($t9-3)
+
+
+    .t1, .t3
+      position: absolute
+      top: res(658)
+      left: 50%
+      opacity: 0
+      transform: translateX(-50%)
+      transition: .5s 1.2s linear
+
+      .t11
+        position: absolute
+        left: res(-40)
+        top: 0
+        @include p4($l4-3)
+
+      .t12
+        position: absolute
+        right: res(-40)
+        top: 0
+        @include p4($l4-3)
+
+    .t2, .t4
+      position: absolute
+      top: res(742)
+      left: 50%
+      opacity: 0
+      transform: translateX(-50%)
+      transition: .5s 1.4s linear
+
+    .t1
+      @include p8($t8-4)
+
+    .t2
+      @include p8($t8-5)
+
+    .t3
+      @include p8($t9-4)
+
+    .t4
+      @include p8($t9-5)
+
+  &.active
+
+    .ba, .bb, .bc, .bd, .be, .bf
+      opacity: 1
+      top: res(195)
+
+    .t1, .t3
+      top: res(558)
+      opacity: 1
+    .t2, .t4
+      top: res(642)
+      opacity: 1
+.pop
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  padding: res(40)
+  z-index: 200
+
+  .wrap
+    display: block
+    width: 100%
+    height: 100%
+    border-radius: res(14)
+    padding: res(30)
+    background: #fff
+
+  .content
+    display: block
+    position: relative
+    width: 100%
+    height: 100%
+    padding: res(30) res(60)
+    border: solid res(4) #01326a
+
+    .c div
+      position: absolute
+      @include size(60, 60)
+      border-radius: 50%
+      background: #fff
+
+      &.c1
+        left: res(-34)
+        top: res(-34)
+        border: solid res(4) transparent
+        border-bottom: solid res(4) #01326a
+        transform: rotate(-45deg)
+
+      &.c2
+        right: res(-34)
+        top: res(-34)
+        border: solid res(4) transparent
+        border-bottom: solid res(4) #01326a
+        transform: rotate(45deg)
+
+      &.c3
+        left: res(-34)
+        bottom: res(-34)
+        border: solid res(4) transparent
+        border-top: solid res(4) #01326a
+        transform: rotate(45deg)
+
+      &.c4
+        right: res(-34)
+        bottom: res(-34)
+        border: solid res(4) transparent
+        border-top: solid res(4) #01326a
+        transform: rotate(-45deg)
+
+    .close
+      position: absolute
+      right: res(40)
+      top: res(40)
+      @include p8($close)
+      z-index: 300
+
+    dt
+      @include font(50, 80, #000)
+
+      span
+        position: relative
+        top: res(-10)
+        @include font(12, 30, #000)
+        padding-left: res(30)
+        text-transform: uppercase
+        letter-spacing: res(4)
+
+    dd
+      position: relative
+      @include font(24, 50, #000)
+      @include clear
+
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        bottom: res(24)
+        width: 100%
+        border-top: dashed res(2) #464646
+        z-index: 1
+
+      .tit
+        position: relative
+        float: left
+        padding: 0 res(50) 0 res(30)
+        background: #fff
+        z-index: 2
+
+        .d1
+          position: absolute
+          left: 0
+          top: res(16)
+          @include p8($c8-2)
+
+        .d2
+          position: absolute
+          right: res(20)
+          top: res(18)
+          @include p8($c8-1)
+
+
+      .time
+        position: relative
+        float: right
+        width: res(200)
+        padding: 0 res(20)
+        background: #fff
+        z-index: 2

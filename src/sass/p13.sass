@@ -1,0 +1,234 @@
+$p13-width: 782
+$p13-height: 342
+
+@import "p13.sprite.sass"
+
+@mixin p13($sprite)
+  @include sprite($sprite)
+  background-size: res($p13-width) res($p13-height)
+
+.p13, .p14
+  position: relative
+  width: 100%
+  height: 100%
+  background: url(../img/p2.jpg) no-repeat center center
+  background-size: cover
+  overflow: hidden
+
+  .e
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 1
+
+  .e
+    .e_1
+      position: absolute
+      left: res(20)
+      top: res(20)
+      @include p2($l-2)
+
+    .e_2
+      position: absolute
+      right: res(20)
+      bottom: res(20)
+      @include p2($l-1)
+
+  .l
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 2
+
+    .t_1
+      position: absolute
+      top: res(186)
+      left: 50%
+      transform: translateX(-50%)
+      @include p13($t13-1)
+      opacity: 0
+      transition: .6s 1s
+
+    .t_2
+      position: absolute
+      top: res(283)
+      left: 50%
+      transform: translateX(-50%)
+      @include size(676, 132)
+
+      div
+        transform: translateY(res(-200))
+        opacity: 0
+
+      .t21
+        position: absolute
+        left: 0
+        top: res(40)
+        @include p13($t13-2-1)
+        transition: .3s 1.3s
+      .t22
+        position: absolute
+        left: res(90)
+        top: res(24)
+        @include p13($t13-2-2)
+        transition: .3s 1.6s
+      .t23
+        position: absolute
+        left: res(166)
+        top: res(50)
+        @include p13($t13-2-3)
+        transition: .3s 1.4s
+      .t24
+        position: absolute
+        left: res(202)
+        top: 0
+        @include p13($t13-2-4)
+        transition: .3s 1.3s
+      .t25
+        position: absolute
+        left: res(237)
+        top: res(6)
+        @include p13($t13-2-5)
+        transition: .3s 1.5s
+      .t26
+        position: absolute
+        left: res(320)
+        top: res(48)
+        @include p13($t13-2-6)
+        transition: .3s 1.4s
+      .t27
+        position: absolute
+        left: res(398)
+        top: res(94)
+        @include p13($t13-2-7)
+        transition: .3s 1.3s
+      .t28
+        position: absolute
+        left: res(402)
+        top: res(16)
+        @include p13($t13-2-8)
+        transition: .3s 1.6s
+      .t29
+        position: absolute
+        left: res(470)
+        top: res(30)
+        @include p13($t13-2-9)
+        transition: .3s 1.3s
+      .t210
+        position: absolute
+        left: res(570)
+        top: res(14)
+        @include p13($t13-2-10)
+        transition: .3s 1.5s
+
+
+    .t_3
+      position: absolute
+      top: res(530)
+      left: 50%
+      transform: translateX(-50%)
+      @include p13($t13-3)
+      opacity: 0
+      transition: .6s 1.2s
+
+    .t_4
+      position: absolute
+      top: res(588)
+      left: 50%
+      transform: translateX(-50%)
+      @include p13($t13-4)
+      opacity: 0
+      transition: .6s 1.4s
+    .t_5
+      position: absolute
+      top: res(660)
+      left: 50%
+      transform: translateX(-50%)
+      @include p13($t13-5)
+      opacity: 0
+      transition: .6s 1.5s
+
+    .t_6
+      position: absolute
+      top: res(428)
+      left: res(898)
+      @include p13($t13-6)
+      opacity: 0
+      transform: scale(3)
+      transition: .2s 1.8s ease-in
+
+  &.active .l
+    .t_1, .t_3, .t_4, .t_5, .t_6, .t_7, .t_8, .t_9
+      opacity: 1
+    .t_2 div
+      opacity: 1
+      transform: translate(0, 0)!important
+    .t_3
+      top: res(430)
+    .t_4
+      top: res(488)
+    .t_5
+      top: res(560)
+
+    .t_6
+      transform: scale(1)
+      opacity: 1
+
+.p14 .l
+  .t_1
+    top: res(112)
+
+  .t_2
+    top: res(172)
+
+  .t_4
+    top: res(518)
+
+  .t_5
+    top: res(590)
+
+  .t_7
+    position: absolute
+    top: res(340)
+    left: 50%
+    transform: translateX(-50%)
+    @include p13($t13-7)
+    opacity: 0
+    transition: 1s 1.6s ease-in
+
+  .t_8
+    position: absolute
+    top: res(396)
+    left: 50%
+    width: res(500)
+    height: res(80)
+    transform: translateX(-50%)
+    opacity: 0
+    transition: 1s 1.8s ease-in
+
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      left: 50%
+      top: res(20)
+      transform: translateX(-50%)
+      @include p13($t13-9)
+
+    input
+      display: block
+      width: res(460)
+      height: res(80)
+      padding: res(20)
+      border-bottom: solid res(2) #fff
+      background: transparent
+      text-align: center
+      @include font(40, 40, #fff)
+
+  .t_9
+    position: absolute
+    top: res(420)
+    left: res(896)
+    @include p13($t13-8)
+    opacity: 0
+    transition: 1s 2s ease-in

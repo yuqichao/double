@@ -1,0 +1,212 @@
+$p2-width: 1334
+$p2-height: 592
+
+@import "p2.sprite.sass"
+
+@mixin p2($sprite)
+  @include sprite($sprite)
+  background-size: res($p2-width) res($p2-height)
+
+.p2
+  position: relative
+  width: 100%
+  height: 100%
+  background: url(../img/p2.jpg) no-repeat center center
+  background-size: cover
+  overflow: hidden
+
+  .e, .m
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 1
+
+  .l
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 2
+
+  .e
+    .e_1
+      position: absolute
+      left: res(20)
+      top: res(20)
+      @include p2($l-2)
+
+    .e_2
+      position: absolute
+      right: res(20)
+      bottom: res(20)
+      @include p2($l-1)
+
+  .m
+    div
+      position: absolute
+      @include p2($l-3)
+
+      &.m_1
+        top: res(615)
+        left: res(290)
+
+      &.m_2
+        top: res(120)
+        left: res(600)
+
+      &.m_3
+        top: res(55)
+        left: res(870)
+
+      &.m_4
+        top: res(575)
+        left: res(1060)
+
+  .l
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+    height: res(251)
+
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      left: 0
+      top: 0
+      z-index: 1
+      @include p2($l-0)
+      width: 0
+      transition: width 3s 1s linear
+
+    .point
+      position: absolute
+      @include p2($point)
+      opacity: 0
+
+    .tit
+      position: absolute
+      top: res(-100)
+
+      p
+        white-space: nowrap
+        @include font(42, 80, #fff)
+        opacity: 0
+        transform: translateY(res(-200))
+
+      span
+        display: block
+        position: absolute
+        top: res(-100)
+        left: res(80)
+        opacity: 0
+        transform: translateX(res(-100))
+
+
+    .txt
+      position: absolute
+      top: res(60)
+      left: res(10)
+      border-left: solid res(2) rgba(255,255,255,.6)
+      padding-left: res(20)
+      opacity: 0
+
+      .t1
+        opacity: 0
+        transform: translateX(res(200))
+      .t2
+        opacity: 0
+        transform: translateX(res(250))
+    .l_1
+      position: absolute
+      left: res(90)
+      top: res(75)
+
+      .point
+        transition: .3s 1.2s linear
+
+      p
+        transition: .7s 1.5s linear
+
+      span
+        @include p2($r-1)
+        top: res(-80)
+        transition: .8s 1.5s linear
+
+      .txt
+        transition: .5s 1.5s linear
+
+      .t1
+        @include p2($t2-1)
+        margin-bottom: res(50)
+        transition: .7s 2s linear
+
+      .t2
+        @include p2($t2-2)
+        transition: .7s 2.2s linear
+
+    .l_2
+      position: absolute
+      left: res(565)
+      top: res(230)
+
+      .point
+        transition: .3s 2.2s linear
+      p
+        transition: .7s 2.5s linear
+
+      span
+        @include p2($r-2)
+        top: res(-180)
+        transition: .8s 2.5s linear
+
+      .txt
+        transition: .5s 2.5s linear
+
+      .t1
+        @include p2($t2-3)
+        margin-bottom: res(50)
+        transition: .7s 3s linear
+
+      .t2
+        @include p2($t2-4)
+        transition: .7s 3.2s linear
+
+    .l_3
+      position: absolute
+      left: res(970)
+      top: res(40)
+
+      .point
+        transition: .3s 3.2s linear
+      p
+        transition: .7s 3.5s linear
+
+      span
+        @include p2($r-3)
+        height: res(106)
+        transition: .8s 3.5s linear
+
+      .txt
+        transition: .5s 3.5s linear
+
+      .t1
+        @include p2($t2-5)
+        margin-bottom: res(50)
+        transition: .7s 4s linear
+
+      .t2
+        @include p2($t2-6)
+        transition: .7s 4.2s linear
+
+  &.active
+
+    .l:before
+      width: 100%
+
+    .l
+      .point, .txt, p, span, .t1, .t2
+        opacity: 1
+      p, span, .t1, .t2
+        transform: translate(0, 0)

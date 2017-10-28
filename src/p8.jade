@@ -1,0 +1,36 @@
+extends temp/template
+block content
+  .p8
+    .l
+      a.box.ba(href="javascript:;")
+        .b1
+        .b2
+        .tit
+        .btn
+      a.box.bb(href="javascript:;")
+        .b1
+        .b2
+        .tit
+        .btn
+      a.box.bc(href="javascript:;")
+        .b1
+        .b2
+        .tit
+        .btn
+
+      .t1
+        .t11
+        .t12
+      .t2
+    .e
+      .e_1
+      .e_2
+
+append js
+  script(src="./js/jquery.slide.js")
+  script.
+    $(function(){
+      setTimeout(function(){
+        $('.p4').addClass('on');
+      }, 1000)
+    })
