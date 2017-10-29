@@ -5,7 +5,11 @@
     resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
     recalc = function () {
       var clientWidth = docEl.clientWidth;
-      if(docEl.clientHeight > docEl.clientWidth) clientWidth = docEl.clientHeight;
+      $('.orient').hide();
+      if(docEl.clientHeight > docEl.clientWidth) {
+        $('.orient').show();
+        clientWidth = docEl.clientHeight;
+      }
       if (!clientWidth) return;
       docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
     };
@@ -27,6 +31,17 @@
       images[i].src = source[i];
     }
   }
+
+  $('.play').on('click', function(){
+    if($(this).hasClass('on')){
+      $(this).removeClass('on');
+      aud.play();
+    }else{
+      $(this).addClass('on');
+      aud.pause();
+    }
+  });
+
   var load_list = ['./img/loading.png', './img/gl.png', './img/gr.png', './img/logo.svg', './img/p1.jpg', './img/p2.jpg', './img/p1.sprite.png'
     , './img/p2.sprite.png', './img/p3.sprite.png', './img/p4.sprite.png', './img/p5.sprite.png', './img/p8.sprite.png'
     , './img/p10.sprite.png', './img/p12.sprite.png', './img/p13.sprite.png'
@@ -47,11 +62,11 @@
           jsApiList: []
       });
       wx.ready(function() {
-          aud.play();
+        aud.play();
       });
       $('#fullpage').fullpage();
       $('.loading').remove();
-      $.fn.fullpage.moveTo(0, 3);
+      $.fn.fullpage.moveTo(0, 0);
     }
   });
 
@@ -66,6 +81,9 @@
       popVr(vr[i]);
     }else{
       if($('.popVod').length > 0) $('.popVod').remove();
+
+      $('.play').addClass('on');
+      aud.pause();
       popVod(video[i]);
     }
 
@@ -88,6 +106,8 @@
   });
 
   $(document).on('click','.popVod .close', function(){
+      $('.play').removeClass('on');
+      aud.play();
     $('.popVod').remove();
   });
 

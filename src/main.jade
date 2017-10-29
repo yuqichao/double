@@ -1,6 +1,7 @@
 extends temp/template
 block content
   #fullpage: .section
+    a.play(href="javascript:;")
     .slide.p1
       .t
         each n, i in new Array(13)
@@ -359,4 +360,5 @@ block content
         span
         | %
   .orient
-    .tips 横屏观看效果更佳哦！
+    .tips 横屏观看效果更佳哦！<br/>
+      span （安卓手机请打开重力感应，苹果手机请关闭竖排方向锁定）
