@@ -150,7 +150,7 @@ $p8-height: 432
 
     .t1, .t3
       position: absolute
-      top: res(658)
+      top: res(608)
       left: 50%
       opacity: 0
       transform: translateX(-50%)
@@ -170,7 +170,7 @@ $p8-height: 432
 
     .t2, .t4
       position: absolute
-      top: res(742)
+      top: res(692)
       left: 50%
       opacity: 0
       transform: translateX(-50%)
@@ -192,13 +192,13 @@ $p8-height: 432
 
     .ba, .bb, .bc, .bd, .be, .bf
       opacity: 1
-      top: res(195)
+      top: res(145)
 
     .t1, .t3
-      top: res(558)
+      top: res(508)
       opacity: 1
     .t2, .t4
-      top: res(642)
+      top: res(592)
       opacity: 1
 .pop
   position: absolute
@@ -214,7 +214,7 @@ $p8-height: 432
     width: 100%
     height: 100%
     border-radius: res(14)
-    padding: res(30)
+    padding: res(20)
     background: #fff
 
   .content
@@ -222,39 +222,39 @@ $p8-height: 432
     position: relative
     width: 100%
     height: 100%
-    padding: res(30) res(60)
+    padding: res(20) res(40)
     border: solid res(4) #01326a
 
     .c div
       position: absolute
-      @include size(60, 60)
+      @include size(40, 40)
       border-radius: 50%
       background: #fff
 
       &.c1
-        left: res(-34)
-        top: res(-34)
+        left: res(-24)
+        top: res(-24)
         border: solid res(4) transparent
         border-bottom: solid res(4) #01326a
         transform: rotate(-45deg)
 
       &.c2
-        right: res(-34)
-        top: res(-34)
+        right: res(-24)
+        top: res(-24)
         border: solid res(4) transparent
         border-bottom: solid res(4) #01326a
         transform: rotate(45deg)
 
       &.c3
-        left: res(-34)
-        bottom: res(-34)
+        left: res(-24)
+        bottom: res(-24)
         border: solid res(4) transparent
         border-top: solid res(4) #01326a
         transform: rotate(45deg)
 
       &.c4
-        right: res(-34)
-        bottom: res(-34)
+        right: res(-24)
+        bottom: res(-24)
         border: solid res(4) transparent
         border-top: solid res(4) #01326a
         transform: rotate(-45deg)
@@ -279,14 +279,14 @@ $p8-height: 432
 
     dd
       position: relative
-      @include font(24, 50, #000)
+      @include font(24, 40, #000)
       @include clear
 
       &:before
         content: ''
         display: block
         position: absolute
-        bottom: res(24)
+        bottom: res(20)
         width: 100%
         border-top: dashed res(2) #464646
         z-index: 1

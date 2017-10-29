@@ -31,14 +31,27 @@
     , './img/p2.sprite.png', './img/p3.sprite.png', './img/p4.sprite.png', './img/p5.sprite.png', './img/p8.sprite.png'
     , './img/p10.sprite.png', './img/p12.sprite.png', './img/p13.sprite.png'
   ];
+  var aud = doc.getElementById('aud');
   //图片预加载及背景音乐初始化
   loading(load_list, function (progress) {
     $('.loading .progress span').html(progress);
     if (progress == 100) {
       // 调用多屏滚动插件
+      wx.config({
+          // 配置信息, 即使不正确也能使用 wx.ready
+          debug: false,
+          appId: '',
+          timestamp: 1,
+          nonceStr: '',
+          signature: '',
+          jsApiList: []
+      });
+      wx.ready(function() {
+          aud.play();
+      });
       $('#fullpage').fullpage();
       $('.loading').remove();
-      $.fn.fullpage.moveTo(0, 0);
+      $.fn.fullpage.moveTo(0, 3);
     }
   });
 
@@ -59,7 +72,7 @@
   });
 
   function popVr(url){
-    $('body').append('<a class="popVr"><a class="close" href="javascript:;"><span></span></a><iframe src="' + url + '" frameborder="0"></iframe></div>');
+    $('body').append('<div class="popVr"><a class="close" href="javascript:;"><span></span></a><iframe src="' + url + '" frameborder="0"></iframe></div>');
   }
   function popVod(url){
     $('body').append('<div class="popVod"><a class="close" href="javascript:;"><span></span></a><video src="'+url+'" controls autoplay></video></div>');

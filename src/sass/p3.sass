@@ -84,7 +84,7 @@ $p3-height: 254
       @include p3($c-3)
       animation: roll 8s linear reverse infinite both
 
-    img
+    svg
       position: absolute
       left: 50%
       top: 40%
@@ -129,9 +129,23 @@ $p3-height: 254
       top: res(270)
       opacity: 1
 
+    path
+      stroke-dasharray: 1000
+      stroke-dashoffset: 1000
+      -webkit-animation: dash 5s 1s linear both
+      animation: dash 5s 1s linear both
+
 @keyframes roll
   0%
     transform: translate(-50%,-50%) rotate(0)
   100%
     transform: translate(-50%,-50%) rotate(360deg)
+
+@-webkit-keyframes dash
+  to
+    stroke-dashoffset: 0
+
+@keyframes dash
+  to
+    stroke-dashoffset: 0
 

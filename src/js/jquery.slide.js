@@ -4,6 +4,8 @@
             var $this = $(this),
                 $list = $this.find('.banner'),
                 $banner = $list.children(),
+                $prev = $this.siblings('.al'),
+                $next = $this.siblings('.ar'),
                 i = 0,
                 len = $banner.size();
 
@@ -12,33 +14,20 @@
 
             var isMove = false;
 
-            $(document).on('click', '.ar', function(){
+            $next.on('click', function(){
               var $this = $(this),
                 $list = $this.siblings('.carousel').find('.banner'),
                 $banner = $list.children();
-              if(isMove) return;
-              isMove = true;
-              $banner.eq(0).animate({width: 0}, 500, 'linear', function(){
-                $list.append($banner.eq(0));
-                $(this).removeAttr('style');
-                $this.siblings('.carousel').find('.banner').children().removeClass('on').eq(2).addClass('on');
-                isMove = false;
-              });
+              $list.append($banner.eq(0));
+              $this.siblings('.carousel').find('.banner').children().removeClass('on').eq(2).addClass('on');
             });
 
-            $(document).on('click', '.al', function(){
+            $prev.on('click', function(){
               var $this = $(this),
-                $list = $this.siblings('.carousel').find('.banner'),
-                $banner = $list.children(),
-                width = $banner.eq(0).width();
-              if(isMove) return;
-              isMove = true;
+                  $list = $this.siblings('.carousel').find('.banner'),
+                  $banner = $list.children();
               $list.prepend($banner.eq(len - 1));
-              $this.find('.banner').children().eq(0).css({width: 0}).animate({width: width}, 500, 'linear', function(){
-                $(this).removeAttr('style');
-                $this.siblings('.carousel').find('.banner').children().removeClass('on').eq(2).addClass('on');
-                isMove = false;
-              });
+              $(this).siblings('.carousel').find('.banner').children().removeClass('on').eq(2).addClass('on');
             });
         })
     }
